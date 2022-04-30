@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-04-30T13:11:58 SAMT" name="Surefire suite" finished-at="2022-04-30T13:12:13 SAMT" duration-ms="15162">
+    <groups>
+    </groups>
+    <test started-at="2022-04-30T13:11:58 SAMT" name="Surefire test" finished-at="2022-04-30T13:12:13 SAMT" duration-ms="15162">
+      <class name="MainPageTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:MainPageTest@cda4919]" started-at="2022-04-30T13:11:58 SAMT" name="setUp" finished-at="2022-04-30T13:12:10 SAMT" duration-ms="11575" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="checkRegisterButton()[pri:0, instance:MainPageTest@cda4919]" started-at="2022-04-30T13:12:10 SAMT" name="checkRegisterButton" finished-at="2022-04-30T13:12:13 SAMT" duration-ms="2685" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkRegisterButton -->
+        <test-method is-config="true" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:MainPageTest@cda4919]" started-at="2022-04-30T13:12:13 SAMT" name="takeScreenshot" finished-at="2022-04-30T13:12:13 SAMT" duration-ms="292" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=checkRegisterButton status=SUCCESS method=MainPageTest.checkRegisterButton()[pri:0, instance:MainPageTest@cda4919] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+      </class> <!-- MainPageTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
