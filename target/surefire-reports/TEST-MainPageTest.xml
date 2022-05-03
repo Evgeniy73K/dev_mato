@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="MainPageTest" time="17.48" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="MainPageTest" time="66.434" tests="3" errors="0" skipped="0" failures="2">
   <properties>
     <property name="sun.desktop" value="gnome"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -59,5 +59,39 @@
     <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="checkRegisterButton" classname="MainPageTest" time="2.703"/>
+  <testcase name="checkRegisterButton" classname="MainPageTest" time="2.496"/>
+  <testcase name="emptyFormRegistationTest" classname="MainPageTest" time="2.746">
+    <failure message="expected:&lt;The Confirm password[rrr] field is mandatory.&gt; but was:&lt;The Confirm password[] field is mandatory.&gt;" type="org.junit.ComparisonFailure"><![CDATA[org.junit.ComparisonFailure: expected:<The Confirm password[rrr] field is mandatory.> but was:<The Confirm password[] field is mandatory.>
+	at MainPageTest.emptyFormRegistationTest(MainPageTest.java:58)
+]]></failure>
+    <system-err><![CDATA[Starting ChromeDriver 98.0.4758.80 (7f0488e8ba0d8e019187c6325a16c29d9b7f4989-refs/branch-heads/4758@{#972}) on port 36602
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1651583351,944][WARNING]: This version of ChromeDriver has not been tested with Chrome version 99.
+May 03, 2022 5:09:12 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+May 03, 2022 5:09:12 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 99, so returning the closest version found: 96
+May 03, 2022 5:09:12 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+INFO: Found CDP implementation for version 99 of 96
+]]></system-err>
+  </testcase>
+  <testcase name="possitiveRegistrationTest" classname="MainPageTest" time="6.796">
+    <failure message="expected:&lt;[Successfully registered]&gt; but was:&lt;[Register for a new account]&gt;" type="org.junit.ComparisonFailure"><![CDATA[org.junit.ComparisonFailure: expected:<[Successfully registered]> but was:<[Register for a new account]>
+	at MainPageTest.possitiveRegistrationTest(MainPageTest.java:40)
+]]></failure>
+    <system-err><![CDATA[Starting ChromeDriver 98.0.4758.80 (7f0488e8ba0d8e019187c6325a16c29d9b7f4989-refs/branch-heads/4758@{#972}) on port 48162
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1651583391,539][WARNING]: This version of ChromeDriver has not been tested with Chrome version 99.
+May 03, 2022 5:09:51 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+May 03, 2022 5:09:51 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 99, so returning the closest version found: 96
+May 03, 2022 5:09:51 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+INFO: Found CDP implementation for version 99 of 96
+]]></system-err>
+  </testcase>
 </testsuite>

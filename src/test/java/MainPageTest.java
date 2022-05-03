@@ -20,19 +20,7 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
-public class MainPageTest {
-
-    private WebDriver driver;
-    private MainPage mainPage;
-
-    @BeforeMethod
-    public void setUp() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        WebDriver.Timeouts timeouts = driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("http://dev.cart-power.com/vnavolykin/mato.uz/?store_access_key=key_value");
-        mainPage = new MainPage(driver);
-    }
+public class MainPageTest extends Settings{
 
     @Test
     public void checkRegisterButton(){
@@ -41,25 +29,37 @@ public class MainPageTest {
         String heading = registerPage.geth1();
         Assert.assertEquals("Register for a new account", heading);
     }
-    
-    @AfterMethod
-    public void takeScreenshot(ITestResult result) {
-        if (! result.isSuccess()) {
-            File screen = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-            Date date = new Date();
-            SimpleDateFormat format = new SimpleDateFormat("hh_mm_ss");
-            String name = format.format(date)+".png";
 
-            try {
-                FileUtils.copyFile(screen,new File("/home/evgeniy/Pictures/dev_mato"+name));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+    @Test
+    public void possitiveRegistrationTest() {
+        mainPage.accountDropDownListClick();
+        RegisterPage registerPage = mainPage.registerPage();
+        registerPage.typeFields("Evgeniy", "Karabaev", "+79051839298", "test@yandex.ru", "123456");
+        registerPage.submitForm();
+        String succesRegistation = registerPage.successfullyPage();
+        Assert.assertEquals("Successfully registered", succesRegistation);
 
-        }
-
-        driver.quit();
     }
 
+    @Test
+    public void emptyFormRegistationTest() {
+        mainPage.accountDropDownListClick();
+        RegisterPage registerPage = mainPage.registerPage();
+        registerPage.submitForm();
+        String heading = registerPage.geth1();
+        Assert.assertEquals("Register for a new account", heading);
+        String phoneError = registerPage.requiredPhone();
+        Assert.assertEquals("The Phone field is mandatory.", phoneError);
+        String emailError = registerPage.requiredEmail();
+        Assert.assertEquals("The E-mail field is mandatory.", emailError);
+        String password1Error = registerPage.requiredPassword1();
+        Assert.assertEquals("The Password field is mandatory.", password1Error);
+        String password2Error = registerPage.requiredPassword2();
+        Assert.assertEquals("The Confirm passwordrrr field is mandatory.", password2Error);
 
+
+
+
+    }
+    
 }

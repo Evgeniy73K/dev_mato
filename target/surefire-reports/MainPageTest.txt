@@ -1,4 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: MainPageTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 17.48 s - in MainPageTest
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 66.434 s <<< FAILURE! - in MainPageTest
+emptyFormRegistationTest(MainPageTest)  Time elapsed: 2.746 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<The Confirm password[rrr] field is mandatory.> but was:<The Confirm password[] field is mandatory.>
+	at MainPageTest.emptyFormRegistationTest(MainPageTest.java:58)
+
+possitiveRegistrationTest(MainPageTest)  Time elapsed: 6.796 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[Successfully registered]> but was:<[Register for a new account]>
+	at MainPageTest.possitiveRegistrationTest(MainPageTest.java:40)
+
